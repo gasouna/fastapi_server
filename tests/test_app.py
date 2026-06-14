@@ -69,8 +69,8 @@ def test_update_user_not_found(client):
         json={
             'username': 'bob',
             'email': 'bob@example.com',
-            'password': 'mynewpassword'
-        }
+            'password': 'mynewpassword',
+        },
     )
     assert response.status_code == HTTPStatus.NOT_FOUND
     assert response.json() == {'detail': 'User not found'}
@@ -88,7 +88,7 @@ def test_get_user(client):
     assert response.json() == {
         'username': 'bob',
         'email': 'bob@example.com',
-        'id': 1
+        'id': 1,
     }
 
 
